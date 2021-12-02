@@ -9,13 +9,20 @@
   </head>
   <body>
     <header class="header"></header>
-    <input
-      type="text"
-      id="input"
-      placeholder="search"
-      class="input"
-      onkeyup="search()"
-    />
+    <div class="container">
+      <input
+        type="text"
+        id="input"
+        placeholder="search"
+        class="input"
+        onkeyup="search()"
+      />
+      <select name="search" id="search" class="search" onchange="filter()">
+        <option>Senior</option>
+        <option>Midweight</option>
+        <option>Junior</option>
+      </select>
+    </div>
     <main>
       <ul class="jobCard"></ul>
     </main>
