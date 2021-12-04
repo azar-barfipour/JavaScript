@@ -1,18 +1,28 @@
-body {
-  margin: 30px auto;
+* {
+  margin: 0;
+  padding: 0;
 }
-
-.card-items {
+body {
+  background-color: #f0fafb;
+}
+.header {
+  height: 100px;
+  background-color: #5ea4a4;
+  width: 100%;
+  background-image: url("./images/bg-header-mobile.svg");
+}
+.container {
+  margin: 30px auto;
+  max-width: 85%;
+}
+.jobCard {
   margin-top: 5rem;
 }
 
 .card-item {
   list-style: none;
-  background-color: aliceblue;
+  background-color: #fff;
   margin: 1rem;
-  display: list-item;
-  display: flex;
-  align-items: center;
 }
 .card-item p {
   margin: 1rem;
@@ -20,10 +30,8 @@ body {
 .search {
   width: 10%;
 }
-.header {
-  margin: 3rem;
-}
-.container {
+
+.search-container {
   display: flex;
   align-items: center;
   justify-content: space-around;
