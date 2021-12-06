@@ -20,9 +20,9 @@ body {
 }
 
 .card-item {
-  list-style: none;
   background-color: #fff;
   margin: 1rem;
+  display: flex;
 }
 .card-item p {
   margin: 1rem;
@@ -45,4 +45,12 @@ body {
   padding: 12px 20px 12px 40px;
   border: 1px solid #ddd;
   margin: 3rem;
+}
+
+.search-display {
+  display: list-item;
+  display: flex;
+}
+.search-none {
+  display: none;
 }

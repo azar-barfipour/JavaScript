@@ -56,13 +56,17 @@ function search() {
   const input = document.querySelector("input");
   let x = document.getElementsByTagName("li");
   for (let j = 0; j < x.length; j++) {
+    if (x[j].childNodes[1].textContent.toLocaleLowerCase().trim.length === 0) {
+      x[j].classList.remove("search-none");
+    }
     if (
       !x[j].childNodes[1].textContent.toLocaleLowerCase().includes(input.value)
     ) {
-      x[j].style.display = "none";
+      // x[j].style.display = "none";
+      x[j].classList.add("search-none");
     } else {
-      x[j].style.display = "list-item";
-      x[j].style.display = "float";
+      // x[j].style.display = "list-item";
+      x[j].classList.add("search-display");
     }
   }
 }
@@ -73,9 +77,12 @@ function filter() {
   const x = document.getElementsByTagName("li");
   for (let k = 0; k < x.length; k++) {
     if (x[k].childNodes[7].textContent === text) {
-      x[k].style.display = "list-item";
+      // x[k].style.display = "list-item";
+      x[k].classList.remove("search-none");
+      x[k].classList.add("search-display");
     } else {
-      x[k].style.display = "none";
+      // x[k].style.display = "none";
+      x[k].classList.add("search-none");
     }
   }
 }
