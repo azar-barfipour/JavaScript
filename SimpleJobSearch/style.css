@@ -4,6 +4,7 @@
 }
 body {
   background-color: #f0fafb;
+  font-family: "[Spartan](https://fonts.google.com/specimen/Spartan)";
 }
 .header {
   height: 100px;
@@ -15,6 +16,19 @@ body {
   margin: 30px auto;
   max-width: 85%;
 }
+.search-container {
+  display: flex;
+}
+.search2 {
+  display: flex;
+}
+.search2 select {
+  margin: 1rem;
+  width: 200px;
+  height: 20px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+}
 .jobCard {
   margin-top: 5rem;
 }
@@ -23,12 +37,65 @@ body {
   background-color: #fff;
   margin: 1rem;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+.card-item:hover {
+  border-left: 0.3rem solid rgb(103, 158, 158);
+}
+.div-job {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0 2rem 1.5rem;
+}
+.div-job__deb {
+  line-height: 0.15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.div-deb1 {
+  display: flex;
+  align-items: center;
+}
+.neww,
+.featured {
+  color: #fff;
+  background-color: rgb(103, 158, 158);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.div-deb3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.div-deb3 p,
+.div-deb3 span {
+  color: rgb(206, 210, 209);
+}
+.div-skill {
+  display: flex;
+  margin-right: 2rem;
+}
+.div-skill p {
+  color: rgb(103, 158, 158);
+  background-color: rgb(239, 247, 246);
+  padding: 0.5rem;
 }
 .card-item p {
   margin: 1rem;
 }
-.search {
-  width: 10%;
+.job {
+  font-size: 1.1rem;
+  color: rgb(103, 158, 158);
+  font-weight: bold;
+}
+.position {
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .search-container {

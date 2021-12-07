@@ -14,102 +14,94 @@ const fetchHandler = async () => {
     const Item = document.createElement("li");
     const divJob = document.createElement("div");
     const divSkill = document.createElement("div");
+    const logo = document.createElement("img");
+    const divJobDet = document.createElement("div");
+    const divJobDet1 = document.createElement("div");
+    const divJobDet2 = document.createElement("div");
+    const divJobDet3 = document.createElement("div");
     const jobItem = document.createElement("p");
     const levelItem = document.createElement("p");
+    const neww = document.createElement("p");
+    const featured = document.createElement("p");
     const position = document.createElement("p");
-    const logo = document.createElement("img");
-    // const languages = document.createElement("p");
-    const location = document.createElement("p");
-    // const role = document.createElement("p");
     const postedAt = document.createElement("p");
+    const postedAtSpan = document.createElement("span");
     const contract = document.createElement("p");
-    // const tools = document.createElement("p");
+    const contractSpan = document.createElement("span");
+    const location = document.createElement("p");
+    const role = document.createElement("p");
+    logo.src = data[i].logo;
     jobItem.textContent = data[i].company;
     levelItem.textContent = data[i].level;
-    position.textContent = data[i].position;
-    // languages.textContent = data[i].languages;
-    location.textContent = data[i].location;
-    // role.textContent = data[i].role;
+    if (data[i].new === true) {
+      neww.textContent = "new";
+    }
+    if (data[i].featured === true) {
+      featured.textContent = "featured";
+    }
     postedAt.textContent = data[i].postedAt;
-    contract.textContent = data[i].contract;
-    // tools.textContent = data[i].tools;
-    logo.src = data[i].logo;
+    postedAtSpan.innerHTML = "&#8226";
+    position.textContent = data[i].position;
+    contractSpan.innerHTML = "&#8226";
+    contract.textContent = data[i].contract + " . ";
+    location.textContent = data[i].location;
+    role.textContent = data[i].role;
+
     Item.className = "card-item";
-    divJob.className = "div-job";
     jobItem.className = "job";
-    // levelItem.className = "level";
-    // levelItem.id = "level";
-    position.className = "position";
+    divJob.className = "div-job";
     logo.className = "logo";
-    // languages.className = "languages";
-    location.className = "location";
-    // role.className = "role";
     postedAt.className = "postedAt";
+    divJobDet.className = "div-job__deb";
+    divJobDet1.className = "div-deb1";
+    if (data[i].new === true) {
+      neww.className = "neww";
+    }
+    if (data[i].featured === true) {
+      featured.className = "featured";
+    }
+    divJobDet3.className = "div-deb3";
+    position.className = "position";
     contract.className = "contract";
-    // tools.className = "tools";
+    divSkill.className = "div-skill";
+    location.className = "location";
+    levelItem.className = "level";
+    levelItem.id = "level";
+    role.className = "role";
     divContainer.appendChild(Item);
     Item.appendChild(divJob);
     Item.appendChild(divSkill);
     divJob.appendChild(logo);
-    divJob.appendChild(jobItem);
-    divJob.appendChild(position);
-    divJob.appendChild(postedAt);
-    divJob.appendChild(contract);
-    divJob.appendChild(location);
-    // Item.appendChild(role);
+    divJob.appendChild(divJobDet);
+    divJobDet.appendChild(divJobDet1);
+    divJobDet.appendChild(divJobDet2);
+    divJobDet.appendChild(divJobDet3);
+    divJobDet1.appendChild(jobItem);
+    divJobDet1.appendChild(neww);
+    divJobDet1.appendChild(featured);
+    divJobDet2.appendChild(position);
+    divJobDet3.appendChild(postedAt);
+    divJobDet3.appendChild(postedAtSpan);
+    divJobDet3.appendChild(contract);
+    divJobDet3.appendChild(contractSpan);
+    divJobDet3.appendChild(location);
+    divSkill.appendChild(role);
     divSkill.appendChild(levelItem);
-
-    // Item.appendChild(languages);
-    // Item.appendChild(tools);
+    for (let w = 0; w < data[i].languages.length; w++) {
+      const languages = document.createElement("p");
+      languages.textContent = data[i].languages[w];
+      divSkill.appendChild(languages);
+      languages.className = "languages";
+    }
+    if (data[i].tools.length !== 0) {
+      for (let q = 0; q < data[i].tools.length; q++) {
+        const tools = document.createElement("p");
+        tools.textContent = data[i].tools[q];
+        divSkill.appendChild(tools);
+        tools.className = "tools";
+      }
+    }
   }
-
-  // for (let q = 0; q < data.length; q++) {
-  //   const ItemSkill = document.createElement("li");
-  //   // const jobItem = document.createElement("p");
-  //   const levelItem = document.createElement("p");
-  //   // const position = document.createElement("p");
-  //   // const logo = document.createElement("img");
-  //   const languages = document.createElement("p");
-  //   // const location = document.createElement("p");
-  //   const role = document.createElement("p");
-  //   // const postedAt = document.createElement("p");
-  //   // const contract = document.createElement("p");
-  //   const tools = document.createElement("p");
-  //   // jobItem.textContent = data[i].company;
-  //   levelItem.textContent = data[q].level;
-  //   // position.textContent = data[i].position;
-  //   languages.textContent = data[q].languages;
-  //   // location.textContent = data[i].location;
-  //   role.textContent = data[q].role;
-  //   // postedAt.textContent = data[i].postedAt;
-  //   // contract.textContent = data[i].contract;
-  //   tools.textContent = data[q].tools;
-  //   // logo.src = data[i].logo;
-  //   ItemSkill.className = "card-item";
-  //   // jobItem.className = "job";
-  //   levelItem.className = "level";
-  //   levelItem.id = "level";
-  //   // position.className = "position";
-  //   // logo.className = "logo";
-  //   languages.className = "languages";
-  //   // location.className = "location";
-  //   role.className = "role";
-  //   // postedAt.className = "postedAt";
-  //   // contract.className = "contract";
-  //   tools.className = "tools";
-  //   divSkill.appendChild(ItemSkill);
-  //   // Item.appendChild(logo);
-  //   // Item.appendChild(jobItem);
-  //   // Item.appendChild(position);
-  //   // Item.appendChild(postedAt);
-  //   // Item.appendChild(contract);
-  //   // Item.appendChild(location);
-  //   ItemSkill.appendChild(role);
-  //   ItemSkill.appendChild(levelItem);
-
-  //   ItemSkill.appendChild(languages);
-  //   ItemSkill.appendChild(tools);
-  // }
 };
 fetchHandler();
 
@@ -118,13 +110,15 @@ function search() {
   let x = document.getElementsByTagName("li");
   for (let j = 0; j < x.length; j++) {
     if (
-      x[j].childNodes[0].childNodes[1].textContent.toLocaleLowerCase().trim
-        .length === 0
+      x[
+        j
+      ].childNodes[0].childNodes[1].childNodes[0].childNodes[0].textContent.toLocaleLowerCase()
+        .trim.length === 0
     ) {
       x[j].classList.remove("search-none");
     }
     if (
-      !x[j].childNodes[0].childNodes[1].textContent
+      !x[j].childNodes[0].childNodes[1].childNodes[0].childNodes[0].textContent
         .toLocaleLowerCase()
         .includes(input.value)
     ) {
@@ -142,7 +136,7 @@ function filter() {
   const text = select.options[select.selectedIndex].text;
   const x = document.getElementsByTagName("li");
   for (let k = 0; k < x.length; k++) {
-    if (x[k].childNodes[1].childNodes[0].textContent === text) {
+    if (x[k].childNodes[1].childNodes[1].textContent === text) {
       // x[k].style.display = "list-item";
       x[k].classList.remove("search-none");
       x[k].classList.add("search-display");
