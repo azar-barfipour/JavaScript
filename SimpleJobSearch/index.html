@@ -23,6 +23,7 @@
             />
           </div>
           <div class="search2">
+            <label for="select">Level</label>
             <select
               name="search"
               id="search"
@@ -33,25 +34,27 @@
               <option>Midweight</option>
               <option>Junior</option>
             </select>
+            <label for="select">Role</label>
             <select
-              name="search"
-              id="search"
+              name="searchRole"
+              id="searchRole"
               class="search"
-              onchange="filter()"
+              onchange="filterRole()"
             >
-              <option>Senior</option>
-              <option>Midweight</option>
-              <option>Junior</option>
+              <option>Frontend</option>
+              <option>Fullstack</option>
+              <option>Backend</option>
             </select>
+            <label for="select">Location</label>
             <select
-              name="search"
-              id="search"
+              name="searchLocation"
+              id="searchLocation"
               class="search"
-              onchange="filter()"
+              onchange="filterLocation()"
             >
-              <option>Senior</option>
-              <option>Midweight</option>
-              <option>Junior</option>
+              <option>USA Only</option>
+              <option>Remote</option>
+              <option>Worldwide</option>
             </select>
           </div>
         </div>

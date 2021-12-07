@@ -5,11 +5,7 @@ const fetchHandler = async () => {
   const divContainer = document.createElement("div");
 
   divContainer.className = "div-container";
-  // divJob.className = "div-job";
-  // divSkill.className = "div-skill";
   jobCard.appendChild(divContainer);
-  // divContainer.appendChild(divJob);
-  // divContainer.appendChild(divSkill);
   for (let i = 0; i < data.length; i++) {
     const Item = document.createElement("li");
     const divJob = document.createElement("div");
@@ -143,6 +139,41 @@ function filter() {
     } else {
       // x[k].style.display = "none";
       x[k].classList.add("search-none");
+    }
+  }
+}
+
+function filterRole() {
+  const select = document.getElementById("searchRole");
+  const textRole = select.options[select.selectedIndex].text;
+  const y = document.getElementsByTagName("li");
+  for (let a = 0; a < y.length; a++) {
+    if (y[a].childNodes[1].childNodes[0].textContent === textRole) {
+      // x[k].style.display = "list-item";
+      y[a].classList.remove("search-none");
+      y[a].classList.add("search-display");
+    } else {
+      // x[k].style.display = "none";
+      y[a].classList.add("search-none");
+    }
+  }
+}
+
+function filterLocation() {
+  const select = document.getElementById("searchLocation");
+  const textLocation = select.options[select.selectedIndex].text;
+  const z = document.getElementsByTagName("li");
+  for (let b = 0; b < z.length; b++) {
+    if (
+      z[b].childNodes[0].childNodes[1].childNodes[2].childNodes[4]
+        .textContent === textLocation
+    ) {
+      // x[k].style.display = "list-item";
+      z[b].classList.remove("search-none");
+      z[b].classList.add("search-display");
+    } else {
+      // x[k].style.display = "none";
+      z[b].classList.add("search-none");
     }
   }
 }
