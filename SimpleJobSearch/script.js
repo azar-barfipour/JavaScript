@@ -131,49 +131,62 @@ function filter() {
   const select = document.getElementById("search");
   const text = select.options[select.selectedIndex].text;
   const x = document.getElementsByTagName("li");
+  const searchRole = document.getElementById("searchRole");
+  const textRole = select.options[searchRole.selectedIndex].text;
+  const y = document.getElementsByTagName("li");
+  const searchLocation = document.getElementById("searchLocation");
+  const textLocation = select.options[searchLocation.selectedIndex].text;
+  const z = document.getElementsByTagName("li");
   for (let k = 0; k < x.length; k++) {
-    if (x[k].childNodes[1].childNodes[1].textContent === text) {
+    if ((x[k].childNodes[1].childNodes[1].textContent === text) || (y[k].childNodes[1].childNodes[0].textContent === textRole) ||
+    (z[k].childNodes[0].childNodes[1].childNodes[2].childNodes[4]
+        .textContent === textLocation)){
       // x[k].style.display = "list-item";
       x[k].classList.remove("search-none");
-      x[k].classList.add("search-display");
+      y[k].classList.remove("search-none");
+      z[k].classList.remove("search-none");
+      // x[k].classList.add("search-display");
+
     } else {
       // x[k].style.display = "none";
       x[k].classList.add("search-none");
+      y[k].classList.add("search-none");
+      z[k].classList.add("search-none");
     }
   }
 }
 
-function filterRole() {
-  const select = document.getElementById("searchRole");
-  const textRole = select.options[select.selectedIndex].text;
-  const y = document.getElementsByTagName("li");
-  for (let a = 0; a < y.length; a++) {
-    if (y[a].childNodes[1].childNodes[0].textContent === textRole) {
-      // x[k].style.display = "list-item";
-      y[a].classList.remove("search-none");
-      y[a].classList.add("search-display");
-    } else {
-      // x[k].style.display = "none";
-      y[a].classList.add("search-none");
-    }
-  }
-}
+// function filterRole() {
+//   const select = document.getElementById("searchRole");
+//   const textRole = select.options[select.selectedIndex].text;
+//   const y = document.getElementsByTagName("li");
+//   for (let a = 0; a < y.length; a++) {
+//     if (y[a].childNodes[1].childNodes[0].textContent === textRole) {
+//       // x[k].style.display = "list-item";
+//       y[a].classList.remove("search-none");
+//       y[a].classList.add("search-display");
+//     } else {
+//       // x[k].style.display = "none";
+//       y[a].classList.add("search-none");
+//     }
+//   }
+// }
 
-function filterLocation() {
-  const select = document.getElementById("searchLocation");
-  const textLocation = select.options[select.selectedIndex].text;
-  const z = document.getElementsByTagName("li");
-  for (let b = 0; b < z.length; b++) {
-    if (
-      z[b].childNodes[0].childNodes[1].childNodes[2].childNodes[4]
-        .textContent === textLocation
-    ) {
-      // x[k].style.display = "list-item";
-      z[b].classList.remove("search-none");
-      z[b].classList.add("search-display");
-    } else {
-      // x[k].style.display = "none";
-      z[b].classList.add("search-none");
-    }
-  }
-}
+// function filterLocation() {
+//   const select = document.getElementById("searchLocation");
+//   const textLocation = select.options[select.selectedIndex].text;
+//   const z = document.getElementsByTagName("li");
+//   for (let b = 0; b < z.length; b++) {
+//     if (
+//       z[b].childNodes[0].childNodes[1].childNodes[2].childNodes[4]
+//         .textContent === textLocation
+//     ) {
+//       // x[k].style.display = "list-item";
+//       z[b].classList.remove("search-none");
+//       z[b].classList.add("search-display");
+//     } else {
+//       // x[k].style.display = "none";
+//       z[b].classList.add("search-none");
+//     }
+//   }
+// }
