@@ -272,5 +272,7 @@ console.log(`average : ${sum/count}`);
 for(const [key  ,value] of Object.entries(game.odds)) {
 const str = key === 'x' ? 'draw' : `victory ${game[key]}`;
 console.log(`Odd of ${str} : ${value}`);}
+
+
 // console.log(`Odd of ${game[key] ?? 'draw'} : ${value}`);
 
