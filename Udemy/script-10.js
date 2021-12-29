@@ -131,3 +131,24 @@ GOOD LUCK 😀
     header.style.color = 'blue';
   })
 })();
+
+//forEach
+
+//using forEach for arrays
+const array = ['USA','EUR','Asia']
+array.forEach((arr,i,arrr) => {
+  console.log(`${i + 1}: ${arr}`);
+  // console.log(arrr);  show the wole array
+})
+
+//using forEach for maps
+const maps = new Map([['a', 'USA'], ['b', 'EUR'] , ['c', 'Asia']])
+maps.forEach((value,key,maps)=>{
+console.log(`${key}: ${value}`);
+})
+
+//using forEach for sets
+const sets = new Set(['USA','EUR','ASIA'])
+sets.forEach((value,_,set)=>{
+console.log(`${value}`);
+})
