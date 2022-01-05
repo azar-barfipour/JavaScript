@@ -132,3 +132,27 @@ calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
 
 // const accOwner = accounts.find(acc => acc.owner === 'Jessica Davis')
 // console.log(accOwner);
+
+// Soting strings
+const owners = ['Jonas','Zach','Adam','Marta']
+console.log(owners.sort());
+console.log(owners);
+
+//Sorting Numbers 
+//it sorted as a String
+
+console.log(movements);
+
+
+//return positive means keep order
+//return negative means switch order
+movements.sort((a,b) => {
+  if(a>b) return 1
+  else return -1
+})
+console.log(movements);
+
+movements.sort((a,b) => a-b) //Ascending
+console.log(movements);
+movements.sort((a,b) => b-a) //Descending
+console.log(movements);

@@ -189,3 +189,9 @@ const displayMovements = function (movements, sort = false) {
      const closeAccountIndex = accounts.findIndex(acc => acc.username === inputCloseUsername.value && acc.pin === Number(inputClosePin.value))
      accounts.splice(closeAccountIndex);
   })
+let sorted= false;
+  btnSort.addEventListener('click',function(e){
+    e.preventDefault();
+    displayMovements(currentAccount.movements, !sorted)
+    sorted = !sorted;
+  })
