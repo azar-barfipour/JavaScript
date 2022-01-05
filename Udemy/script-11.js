@@ -77,13 +77,58 @@ TEST DATA 1: [5, 2, 4, 1, 15, 8, 3]
 TEST DATA 2: [16, 6, 10, 5, 6, 1, 4]
 */
 
-const calcAverageHumanAge = (arr) => {
-    const dogsToHumans = arr.map(each => (each <= 2 ? each * 2 : 16 + each * 4))
-    const filterDogsToHumans = dogsToHumans.filter(each => each >= 18)
-    // return filterDogsToHumans
-    const average = filterDogsToHumans.reduce((acc,each,i,arr) => acc + each / arr.length,0) 
-     return average
+// const calcAverageHumanAge = (arr) => {
+//     const dogsToHumans = arr.map(each => (each <= 2 ? each * 2 : 16 + each * 4))
+//     const filterDogsToHumans = dogsToHumans.filter(each => each >= 18)
+//     // return filterDogsToHumans
+//     const average = filterDogsToHumans.reduce((acc,each,i,arr) => acc + each / arr.length,0) 
+//     return average
 
+// }
+
+const calcAverageHumanAge = (arr) => {
+  const average = arr.map(mov => mov <= 2 ? mov * 2 : 16 + mov * 4).filter(mov => mov >= 18)
+  .reduce((acc,mov,i,arr) => acc + mov / arr.length,0)
+  console.log(average);
 }
-console.log(calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]));
-console.log(calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]));
+calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
+
+
+// Data
+// const account1 = {
+//   owner: 'Jonas Schmedtmann',
+//   movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+//   interestRate: 1.2, // %
+//   pin: 1111,
+// };
+
+// const account2 = {
+//   owner: 'Jessica Davis',
+//   movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
+//   interestRate: 1.5,
+//   pin: 2222,
+// };
+
+// const account3 = {
+//   owner: 'Steven Thomas Williams',
+//   movements: [200, -200, 340, -300, -20, 50, 400, -460],
+//   interestRate: 0.7,
+//   pin: 3333,
+// };
+
+// const account4 = {
+//   owner: 'Sarah Smith',
+//   movements: [430, 1000, 700, 50, 90],
+//   interestRate: 1,
+//   pin: 4444,
+// };
+
+// const accounts = [account1, account2, account3, account4];
+
+// for(const acc of accounts){
+//    acc.owner === 'Jessica Davis' ? console.log(acc) : '' 
+// }
+
+// const accOwner = accounts.find(acc => acc.owner === 'Jessica Davis')
+// console.log(accOwner);
