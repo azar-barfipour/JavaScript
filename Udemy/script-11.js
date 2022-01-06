@@ -156,3 +156,34 @@ movements.sort((a,b) => a-b) //Ascending
 console.log(movements);
 movements.sort((a,b) => b-a) //Descending
 console.log(movements);
+
+//fill method
+
+const x = new Array(7)
+// x.fill(2);
+console.log(x);
+
+// fill(n,start,end)
+x.fill(1,2,5)
+
+
+const arr = [1,2,3,4,5,6,7]
+arr.fill(23,2,6)
+console.log(arr);
+
+//Array.from
+const y = Array.from({length: 7}, () => 1)
+console.log(y);
+
+const z = Array.from({length:7},(_,i)=> i+1)
+console.log(z);
+
+const t = Array.from({length:100},(_,i)=> Math.random(i))
+console.log(t);
+
+
+//get from UI
+// const momvementsUI = Array.from(document.querySelector('.movements__value'))
+// console.log(momvementsUI);
+
+

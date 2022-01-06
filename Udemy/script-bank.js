@@ -195,3 +195,13 @@ let sorted= false;
     displayMovements(currentAccount.movements, !sorted)
     sorted = !sorted;
   })
+
+
+
+  // Array from 
+  labelBalance.addEventListener('click',function(e){
+    e.preventDefault()
+    const momvementsUI = Array.from(document.querySelectorAll('.movements__value'))
+  console.log(momvementsUI.map(el => Number(el.textContent.replace('€',''))));
+  })
+  
