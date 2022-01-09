@@ -203,4 +203,37 @@ let sorted= false;
     const momvementsUI = Array.from(document.querySelectorAll('.movements__value'))
   console.log(momvementsUI.map(el => Number(el.textContent.replace('€',''))));
   })
+
+  // Excersise array methods
+  //1
+  const depositSum = accounts.flatMap(acc => acc.movements).filter(acc => acc > 0).reduce((ac , mov) => ac + mov,0);
+  console.log(depositSum);
   
+  //2
+  const numDeposit1000 =  accounts.flatMap(acc => acc.movements).filter(acc => acc >= 1000).length;
+  console.log(numDeposit1000);
+
+
+  //3
+  const {deposits,withdrawals}= accounts.flatMap(acc => acc.movements).reduce((sum,mov) =>{
+    mov > 0 ? sum.deposits += mov : sum.withdrawals += mov
+    return sum
+  },{deposits: 0, withdrawals:0})
+  console.log(deposits,withdrawals);
+  // with arrays
+  const [x,y]= accounts.flatMap(acc => acc.movements).reduce((sum,mov) =>{
+    mov > 0 ? sum[0] += mov : sum[1] += mov
+    return sum
+  },[0,0])
+  console.log(x,y);
+
+  //4
+  const converttitleCase = function (title) {
+   const exceptions = ['a','an','the','to','be','with']
+   const newTitle = title.toLowerCase().split(' ').map(word => exceptions.includes(word) ? word : word[0].toUpperCase() + word.slice(1)).join(' ')
+   return newTitle
+  }
+  console.log(converttitleCase('a new PRACTICE'));
+  console.log(converttitleCase('this is one of the best in the world'));
+  console.log(converttitleCase('i want to be an excelent developer with hard working'));
+  console.log(converttitleCase('my freinds like me cuz i am the BEST people in the WORLD;)'));
