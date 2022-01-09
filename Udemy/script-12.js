@@ -229,3 +229,19 @@ const account1 = {
     console.log(momvementsUI.map(el => Number(el.textContent.replace('€',''))));
     })
     
+
+    //setTimeout
+
+   const time = setTimeout( function() {
+     console.log('Azzzar');
+   }, 1000)
+console.log('waitnig.....');
+clearTimeout(time); // for clear the function
+
+// setInterval
+const interval = setInterval(() => {
+  console.log(new Date());
+}, 1000);
+
+// if (interval.includes('2022 14:40:50')) clearInterval(interval);
+
