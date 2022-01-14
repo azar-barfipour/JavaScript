@@ -59,3 +59,47 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
     document.querySelector(id).scrollIntoView({ behavior: "smooth" });
   }
 });
+
+// Tabbed component
+const tabs = document.querySelectorAll(".operations__tab");
+const tabsContainer = document.querySelector(".operations__tab-container");
+const tabsContent = document.querySelectorAll(".operations__content");
+
+tabsContainer.addEventListener("click", (e) => {
+  const clicked = e.target.closest(".operations__tab");
+  if (!clicked) return;
+  tabs.forEach((tab) => tab.classList.remove("operations__tab--active"));
+  clicked.classList.add("operations__tab--active");
+  tabsContent.forEach((c) =>
+    c.classList.remove(".operations__content--active")
+  );
+  document
+    .querySelector(`.operations__content--${clicked.dataset.tab}`)
+    .classList.add(".operations__content--active");
+});
+
+// menu fade animation
+const nav = document.querySelector(".nav");
+nav.addEventListener("mouseover", function (e) {
+  console.log("ffff");
+  if (e.target.classList.contains("nav__link")) {
+    const link = e.target;
+    const sibling = link.closest(".nav").querySelectorAll(".nav__link");
+    const logo = link.closest(".nav").querySelector("img");
+    sibling.forEach((el) => {
+      if (el !== link) el.style.opacity = 0.5;
+    });
+    logo.style.opacity = 0.5;
+  }
+});
+nav.addEventListener("mouseout", function (e) {
+  if (e.target.classList.contains("nav__link")) {
+    const link = e.target;
+    const sibling = link.closest(".nav").querySelectorAll(".nav__link");
+    const logo = link.closest(".nav").querySelector("img");
+    sibling.forEach((el) => {
+      if (el !== link) el.style.opacity = 1;
+    });
+    logo.style.opacity = 1;
+  }
+});
