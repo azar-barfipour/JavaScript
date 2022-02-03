@@ -137,3 +137,45 @@ const obsOptions = {
 
 const observer = new IntersectionObserver(obsCallback, obsOptions);
 observer.observe(header);
+
+// add and remove css class when enter to each section to transorm and reveal sections
+const allSections = document.querySelectorAll(".section");
+
+const revealSection = function (enteries, observer) {
+  const [entry] = enteries;
+  // if (!entry.isIntersecting) return;
+  entry.target.classList.remove("section--hidden");
+  observer.unobserve(entry.target);
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.15,
+});
+
+allSections.forEach((section) => {
+  sectionObserver.observe(section);
+  section.classList.add("section--hidden");
+});
+
+// Lazy loading images : make image blur in css and use a second image which is the actual and bigger image in html (data-src) now we need to replace the better image with the blur one when we see it
+
+const imageTarget = document.querySelectorAll("img[data-src]");
+const loadingImg = function (entries, observer) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+  // replace src with data-src
+  entry.target.src = entry.target.dataset.src;
+  //remove blur from css class
+  entry.target.addEventListener("load", function () {
+    entry.target.classList.remove("lazy-img");
+  });
+  observer.unobserve(entry.target);
+};
+
+const imageObserver = new IntersectionObserver(loadingImg, {
+  root: null,
+  threshold: 0,
+  rootMargin: "200px",
+});
+imageTarget.forEach((img) => imageObserver.observe(img));
